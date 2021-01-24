@@ -1,0 +1,30 @@
+﻿namespace TchiboFamilyCircle.Dto
+{
+    public enum FamilyMemberType
+    {
+        Husband,
+        Wife,
+        Mother,
+        Father,
+        Son,
+        Dauther,
+        Sister,
+        Brother,
+        CousinMale,
+        CousinFemale,
+        MotherInLaw,
+        FatherInLaw,
+        Boyfriend,
+        Girlfriend,
+        FriendFemale,
+        FriendMale,
+        Nephew,
+        Nice,
+        Uncle,
+        Aunt,
+        GrandMa,
+        GrandPa,
+        RelativeFemale,
+        RelativeMale
+    }
+}
