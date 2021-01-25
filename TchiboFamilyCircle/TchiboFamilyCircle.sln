@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TchiboFamilyCircleApi", "TchiboFamilyCircle\TchiboFamilyCircleApi.csproj", "{7C3F7135-830E-4C98-B519-CA0C0F6D54EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TchiboFamilyCircleApi", "TchiboFamilyCircleApi\TchiboFamilyCircleApi.csproj", "{7C3F7135-830E-4C98-B519-CA0C0F6D54EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TchiboFamilyCircle.Dto", "TchiboFamilyCircle.Dto\TchiboFamilyCircle.Dto.csproj", "{F35C5884-1DC4-452E-9EA8-ECD0CD724C90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TchiboFamilyCircle.Dto", "TchiboFamilyCircle.Dto\TchiboFamilyCircle.Dto.csproj", "{F35C5884-1DC4-452E-9EA8-ECD0CD724C90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TchiboFamilyCircle.Mapping", "TchiboFamilyCircle.Mapping\TchiboFamilyCircle.Mapping.csproj", "{46CF396F-8531-4045-B895-69EB903ED2AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TchiboFamilyCircle.Mapping", "TchiboFamilyCircle.Mapping\TchiboFamilyCircle.Mapping.csproj", "{46CF396F-8531-4045-B895-69EB903ED2AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

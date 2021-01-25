@@ -11,6 +11,8 @@ namespace TchiboFamilyCircle.Dto
 
         public FamilyMemberType Type { get; set; }
 
+        public DateTime DateOfBirth { get; set; }
+
         public Occasion Occasion { get; set; }
 
         public IList<string> Sizes { get; set; }
