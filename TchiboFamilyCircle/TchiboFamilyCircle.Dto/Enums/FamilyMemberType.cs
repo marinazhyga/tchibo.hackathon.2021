@@ -22,8 +22,8 @@
         Nice,
         Uncle,
         Aunt,
-        GrandMa,
-        GrandPa,
+        Grandma,
+        Granpa,
         RelativeFemale,
         RelativeMale
     }

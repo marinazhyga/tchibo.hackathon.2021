@@ -20,6 +20,13 @@ namespace TchiboFamilyCircleApi.Controllers
             _familyMemberService = familyMemberService;            
         }
 
+        /// <summary>
+        /// Get a list of FamilyMembers.
+        /// </summary>
+        /// <param name="familyMember"></param>
+        /// <returns>empty</returns>
+        /// <response code="200">FamilyMembers have been created received</response>
+        /// <response code="400">Exception occurred during getting FamilyMembers</response> 
         [HttpGet]
         public ActionResult<IEnumerable<FamilyMember>> GetFamilyMembers()
         {
@@ -35,9 +42,46 @@ namespace TchiboFamilyCircleApi.Controllers
             {
                 _logger.LogError("Exception occured {@ex}", ex.Message);
                 return BadRequest(ex.Message);
-            }          
+            }
         }
 
+        /// <summary>
+        /// Creates a new FamilyMember.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     {
+        ///          "name": "Ursula",
+        ///          "type": "Mother",
+        ///          "dateOfBirth": "1962-12-26",
+        ///          "occasions": [
+        ///              {
+        ///               "id": 1,
+        ///               "name": "Birthday",
+        ///               "date": "2021-12-26"
+        ///               },
+        ///               {
+        ///               "id": 2,
+        ///               "name": "Christmas",
+        ///               "date": "2021-12-25"
+        ///               },
+        ///               {
+        ///               "id": 3,
+        ///               "name": "Mother'sDay",
+        ///               "date": "2021-01-26T23:36:03.088Z"
+        ///               }
+        ///          ],
+        ///          "sizes": "40/42, M 40/42",
+        ///          "interests": "music, sport, jewerly, swimming, backing, traveling",
+        ///          "customerNumber": "7584947365"
+        ///          }
+        ///
+        /// </remarks>
+        /// <param name="familyMember"></param>
+        /// <returns>empty</returns>
+        /// <response code="200">FamilyMember has been created successfully</response>
+        /// <response code="400">Exception occurred during FamilyMember creation</response>        
         [HttpPost]
         public IActionResult AddFamilyMember([FromBody] FamilyMember familyMember)
         {
@@ -56,6 +100,39 @@ namespace TchiboFamilyCircleApi.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Updates an existing FamilyMember.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     {
+        ///          "id": "6010a9b11242ed7b85d89d7f",
+        ///          "name": "Ursula",
+        ///          "type": "Grandma",
+        ///          "dateOfBirth": "1942-09-24",
+        ///          "occasions": [
+        ///              {
+        ///               "id": 1,
+        ///               "name": "Birthday",
+        ///               "date": "2021-12-26"
+        ///               },
+        ///               {
+        ///               "id": 2,
+        ///               "name": "Christmas",
+        ///               "date": "2021-12-25"
+        ///               }
+        ///          ],
+        ///          "sizes": "40/42, M 40/42",
+        ///          "interests": "music, jewerly, backing, traveling",
+        ///          "customerNumber": "7584947365"
+        ///          }
+        ///
+        /// </remarks>
+        /// <param name="familyMember"></param>
+        /// <returns>empty</returns>
+        /// <response code="200">FamilyMember has been created successfully</response>
+        /// <response code="400">Exception occurred during FamilyMember creation</response>  
         [HttpPut]
         public IActionResult UpdateFamilyMember([FromBody] FamilyMember familyMember)
         {
@@ -74,6 +151,21 @@ namespace TchiboFamilyCircleApi.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Deletes a FamilyMember.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     {
+        ///          "id": "6010a9b11242ed7b85d89d7f"       
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="id">Unique id of FamilyMember</param>
+        /// <returns>empty</returns>
+        /// <response code="200">FamilyMember has been deleted successfully</response>
+        /// <response code="400">Exception occurred during FamilyMember deletion</response>    
         [HttpDelete("{id}")]
         public IActionResult DeleteFamilyMember(string id)
         {
