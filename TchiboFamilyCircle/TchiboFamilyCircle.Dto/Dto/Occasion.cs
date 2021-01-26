@@ -1,4 +1,6 @@
-﻿namespace TchiboFamilyCircle.Dto
+﻿using System;
+
+namespace TchiboFamilyCircle.Dto
 {
     public class Occasion
     {
@@ -6,6 +8,6 @@
         
         public string Name { set; get; }
 
-        public string Date { set; get; }
+        public DateTime Date { set; get; }
     }
 }

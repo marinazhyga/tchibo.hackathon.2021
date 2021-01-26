@@ -10,7 +10,7 @@ namespace TchiboFamilyCircle.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
@@ -18,7 +18,7 @@ namespace TchiboFamilyCircle.Entities
 
         public DateTime DateOfBirth { get; set; }
 
-        public Occasion Occasion { get; set; }
+        public IEnumerable<Occasion> Occasions { get; set; }
 
         public IList<string> Sizes { get; set; }
 

@@ -5,13 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TchiboFamilyCircle.DataContext\TchiboFamilyCircle.DataContext.csproj" />
-    <ProjectReference Include="..\TchiboFamilyCircle.Dto\TchiboFamilyCircle.Dto.csproj" />
+    <ProjectReference Include="..\TchiboFamilyCircle.Entities\TchiboFamilyCircle.Entities.csproj" />
     <ProjectReference Include="..\TchiboFamilyCircle.Settings\TchiboFamilyCircle.Settings.csproj" />
   </ItemGroup>
 

@@ -5,7 +5,7 @@ namespace TchiboFamilyCircle.Dto
 {
     public class FamilyMember
     {
-        public int Id { get; set; } 
+        public string Id { get; set; } 
 
         public string Name { get; set; }
 
@@ -13,7 +13,7 @@ namespace TchiboFamilyCircle.Dto
 
         public DateTime DateOfBirth { get; set; }
 
-        public Occasion Occasion { get; set; }
+        public IEnumerable<Occasion> Occasions { get; set; }
 
         public string Sizes { get; set; }
 

@@ -2,8 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using TchiboFamilyCircle.DomainService.Contracts;
+using TchiboFamilyCircle.DomainService;
 using TchiboFamilyCircle.Dto;
 
 namespace TchiboFamilyCircleApi.Controllers
@@ -18,16 +17,14 @@ namespace TchiboFamilyCircleApi.Controllers
         public FamilyMembersController(ILogger<FamilyMembersController> logger, IFamilyMemberService familyMemberService)
         {
             _logger = logger;
-            _familyMemberService = familyMemberService;
-
-            _logger.LogInformation("Test");
+            _familyMemberService = familyMemberService;            
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<FamilyMember>>> GetFamilyMembers()
+        public ActionResult<IEnumerable<FamilyMember>> GetFamilyMembers()
         {
             _logger.LogInformation("GetFamilyMembers requested");
-          
+
             try
             {
                 var result = _familyMemberService.GetAll();
@@ -36,31 +33,63 @@ namespace TchiboFamilyCircleApi.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError("Exception occured", ex.Message);                
-            }
-           
-            return NoContent();
+                _logger.LogError("Exception occured {@ex}", ex.Message);
+                return BadRequest(ex.Message);
+            }          
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddFamilyMember([FromBody]FamilyMember familyMember)
+        public IActionResult AddFamilyMember([FromBody] FamilyMember familyMember)
         {
-            _logger.LogInformation("AddFamilyMember requested");
-            return NoContent();
+            _logger.LogInformation("AddFamilyMember requested {@familyMember}", familyMember);
+
+            try
+            {
+                _familyMemberService.Add(familyMember);               
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception occured {@ex}", ex.Message);
+                return BadRequest(ex.Message);
+            }
+
+            return Ok();
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateFamilyMember(int id, [FromBody] FamilyMember familyMember)
+        [HttpPut]
+        public IActionResult UpdateFamilyMember([FromBody] FamilyMember familyMember)
         {
-            _logger.LogInformation("UpdateFamilyMember requested");
-            return NoContent();
+            _logger.LogInformation("UpdateFamilyMember requested {@familyMember}", familyMember);
+
+            try
+            {
+                _familyMemberService.Update(familyMember);               
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception occured {@ex}", ex.Message);
+                return BadRequest(ex.Message);
+            }
+
+            return Ok();
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteFamilyMember(int id)
+        public IActionResult DeleteFamilyMember(string id)
         {
-            _logger.LogInformation("DeleteFamilyMember requested");
-            return NoContent();
+            _logger.LogInformation("DeleteFamilyMember requested {@id}", id);
+
+            try
+            {
+                _familyMemberService.Delete(id);              
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception occured {@ex}", ex.Message);
+                return BadRequest(ex.Message);
+            }
+
+            return Ok();
         }
     }    
 }

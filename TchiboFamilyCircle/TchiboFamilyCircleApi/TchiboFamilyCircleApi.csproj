@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -10,6 +10,7 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="AutofacSerilogIntegration" Version="5.0.0" />
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.11" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="Serilog" Version="2.10.0" />
@@ -24,10 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TchiboFamilyCircle.DomainService.Contracts\TchiboFamilyCircle.DomainService.Contracts.csproj" />
     <ProjectReference Include="..\TchiboFamilyCircle.DomainService\TchiboFamilyCircle.DomainService.csproj" />
     <ProjectReference Include="..\TchiboFamilyCircle.Dto\TchiboFamilyCircle.Dto.csproj" />
     <ProjectReference Include="..\TchiboFamilyCircle.Mapping\TchiboFamilyCircle.Mapping.csproj" />
+    <ProjectReference Include="..\TchiboFamilyCircle.Settings\TchiboFamilyCircle.Settings.csproj" />
   </ItemGroup>
 
 

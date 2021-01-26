@@ -9,8 +9,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using TchiboFamilyCircle.DomainService;
-using TchiboFamilyCircle.DomainService.Contracts;
 using TchiboFamilyCircle.Mapping;
+using TchiboFamilyCircle.Settings;
 
 namespace TchiboFamilyCircle
 {
@@ -26,12 +26,20 @@ namespace TchiboFamilyCircle
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(options => options.UseMemberCasing());
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tchibo Family Circle Api", Version = "v1" });
             });
-                     
+
+            services.Configure<AppSettings>(options =>
+            {
+                options.ConnectionString = Configuration.GetSection("MongoDb:ConnectionString").Value;
+                options.Database = Configuration.GetSection("MongoDb:DatabaseName").Value;
+                options.CollectionName = Configuration.GetSection("MongoDb:CollectionName").Value;
+            });
 
             services.AddSingleton
                 (
@@ -39,9 +47,7 @@ namespace TchiboFamilyCircle
                     {
                         config.AddProfile(new FamilyMemberMapping());
                     }).CreateMapper()
-                );
-
-         
+                );         
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -53,9 +59,8 @@ namespace TchiboFamilyCircle
             builder.RegisterLogger();
 
             builder.RegisterType<FamilyMemberService>()
-              .As<IFamilyMemberService>();                       
-
-            Log.Information("Hello, world!");          
+              .As<IFamilyMemberService>();
+                  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
