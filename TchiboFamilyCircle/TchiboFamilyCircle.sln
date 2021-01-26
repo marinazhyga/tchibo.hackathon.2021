@@ -9,6 +9,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TchiboFamilyCircle.Dto", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TchiboFamilyCircle.Mapping", "TchiboFamilyCircle.Mapping\TchiboFamilyCircle.Mapping.csproj", "{46CF396F-8531-4045-B895-69EB903ED2AA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainLayer", "DomainLayer", "{F0B434D9-072A-49C4-BA7E-45D71F40117B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TchiboFamilyCircle.DomainService", "TchiboFamilyCircle.DomainService\TchiboFamilyCircle.DomainService.csproj", "{033E34D2-AED4-4B8C-B315-41E6C1339C18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TchiboFamilyCircle.DomainService.Contracts", "TchiboFamilyCircle.DomainService.Contracts\TchiboFamilyCircle.DomainService.Contracts.csproj", "{32ADECE1-5CDC-45EA-B39A-701A80A2FBEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAccessLayer", "{D20CE360-F3E4-47AD-AE17-C66AC7A48BA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TchiboFamilyCircle.Entities", "TchiboFamilyCircle.Entities\TchiboFamilyCircle.Entities.csproj", "{05F0ABC4-A91D-4538-A707-506B6B1E2113}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +37,28 @@ Global
 		{46CF396F-8531-4045-B895-69EB903ED2AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46CF396F-8531-4045-B895-69EB903ED2AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46CF396F-8531-4045-B895-69EB903ED2AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{033E34D2-AED4-4B8C-B315-41E6C1339C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033E34D2-AED4-4B8C-B315-41E6C1339C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033E34D2-AED4-4B8C-B315-41E6C1339C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033E34D2-AED4-4B8C-B315-41E6C1339C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32ADECE1-5CDC-45EA-B39A-701A80A2FBEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32ADECE1-5CDC-45EA-B39A-701A80A2FBEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32ADECE1-5CDC-45EA-B39A-701A80A2FBEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32ADECE1-5CDC-45EA-B39A-701A80A2FBEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F0ABC4-A91D-4538-A707-506B6B1E2113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F0ABC4-A91D-4538-A707-506B6B1E2113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F0ABC4-A91D-4538-A707-506B6B1E2113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F0ABC4-A91D-4538-A707-506B6B1E2113}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F35C5884-1DC4-452E-9EA8-ECD0CD724C90} = {F0B434D9-072A-49C4-BA7E-45D71F40117B}
+		{46CF396F-8531-4045-B895-69EB903ED2AA} = {F0B434D9-072A-49C4-BA7E-45D71F40117B}
+		{033E34D2-AED4-4B8C-B315-41E6C1339C18} = {F0B434D9-072A-49C4-BA7E-45D71F40117B}
+		{32ADECE1-5CDC-45EA-B39A-701A80A2FBEF} = {F0B434D9-072A-49C4-BA7E-45D71F40117B}
+		{05F0ABC4-A91D-4538-A707-506B6B1E2113} = {D20CE360-F3E4-47AD-AE17-C66AC7A48BA4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6F8B02D-6F27-4561-8947-47006FF1AEFF}

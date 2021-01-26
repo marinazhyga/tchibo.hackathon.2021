@@ -15,9 +15,9 @@ namespace TchiboFamilyCircle.Dto
 
         public Occasion Occasion { get; set; }
 
-        public IList<string> Sizes { get; set; }
+        public string Sizes { get; set; }
 
-        public IList<string> Interests { get; set; }
+        public string Interests { get; set; }
 
         public string CustomerNumber { get; set; }
     }
