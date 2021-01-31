@@ -33,7 +33,17 @@ namespace TchiboFamilyCircle
             services.AddControllers()
                 .AddNewtonsoftJson(options =>
             options.SerializerSettings.Converters.Add(new StringEnumConverter()));
-            
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AnyOrigin", builder =>
+                {
+                    builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod();
+                });
+            });           
+
             services.AddSwaggerGenNewtonsoftSupport();
 
             services.AddSwaggerGen(c =>
@@ -87,6 +97,9 @@ namespace TchiboFamilyCircle
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Configure
+            app.UseCors("AnyOrigin");
+
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
