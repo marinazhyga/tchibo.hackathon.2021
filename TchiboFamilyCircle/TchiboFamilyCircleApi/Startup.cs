@@ -38,8 +38,6 @@ namespace TchiboFamilyCircle
 
             services.AddSwaggerGen(c =>
             {
-                c.DescribeAllEnumsAsStrings();
-
                 c.SwaggerDoc("v1", new OpenApiInfo 
                 { 
                     Title = "Tchibo Family Circle Api",
