@@ -59,7 +59,7 @@ namespace TchiboFamilyCircleApi.Controllers
         ///              {
         ///               "id": 1,
         ///               "name": "Birthday",
-        ///               "date": "2021-12-26"
+        ///               "date": "2021-09-24"
         ///               },
         ///               {
         ///               "id": 2,
@@ -69,7 +69,7 @@ namespace TchiboFamilyCircleApi.Controllers
         ///               {
         ///               "id": 3,
         ///               "name": "Mother'sDay",
-        ///               "date": "2021-01-26T23:36:03.088Z"
+        ///               "date": "2021-05-09"
         ///               }
         ///          ],
         ///          "sizes": "40/42, M 40/42",

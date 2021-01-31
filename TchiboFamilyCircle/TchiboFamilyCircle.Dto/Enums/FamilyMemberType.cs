@@ -3,28 +3,28 @@
     public enum FamilyMemberType
     {
         Husband,
-        Wife,
-        Mother,
-        Father,
+        Wife,        
         Son,
         Dauther,
-        Sister,
+        Father,
+        Mother,
         Brother,
+        Sister,       
         CousinMale,
         CousinFemale,
-        MotherInLaw,
         FatherInLaw,
+        MotherInLaw,      
         Boyfriend,
         Girlfriend,
-        FriendFemale,
         FriendMale,
+        FriendFemale,      
         Nephew,
         Nice,
         Uncle,
         Aunt,
+        Grandpa,
         Grandma,
-        Granpa,
-        RelativeFemale,
-        RelativeMale
+        RelativeMale,
+        RelativeFemale      
     }
 }

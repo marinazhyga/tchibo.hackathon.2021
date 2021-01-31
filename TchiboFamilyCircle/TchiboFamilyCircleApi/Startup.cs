@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Converters;
 using Serilog;
 using System;
 using System.IO;
@@ -30,10 +31,15 @@ namespace TchiboFamilyCircle
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                .AddNewtonsoftJson(options => options.UseMemberCasing());
+                .AddNewtonsoftJson(options =>
+            options.SerializerSettings.Converters.Add(new StringEnumConverter()));
+            
+            services.AddSwaggerGenNewtonsoftSupport();
 
             services.AddSwaggerGen(c =>
             {
+                c.DescribeAllEnumsAsStrings();
+
                 c.SwaggerDoc("v1", new OpenApiInfo 
                 { 
                     Title = "Tchibo Family Circle Api",
@@ -72,7 +78,9 @@ namespace TchiboFamilyCircle
 
             builder.RegisterType<FamilyMemberService>()
               .As<IFamilyMemberService>();
-                  
+
+            builder.RegisterType<SizeService>()
+             .As<ISizeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
