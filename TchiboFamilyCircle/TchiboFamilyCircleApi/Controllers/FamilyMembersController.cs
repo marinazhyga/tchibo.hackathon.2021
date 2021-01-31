@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using TchiboFamilyCircle.DomainService;
 using TchiboFamilyCircle.Dto;
+using System.Linq;
 
 namespace TchiboFamilyCircleApi.Controllers
 {
@@ -45,6 +46,30 @@ namespace TchiboFamilyCircleApi.Controllers
         }
 
         /// <summary>
+        /// Get a list of family member types.
+        /// </summary>
+        /// <returns>list of family member types</returns>
+        /// <response code="200">Family member types have been received</response>
+        /// <response code="400">Exception occurred during getting family member types</response> 
+        [HttpGet("types")]
+        public ActionResult<IEnumerable<string>> GetFamilyMemberTypes()
+        {
+            _logger.LogInformation("GetFamilyMemberTypes requested");
+
+            try
+            {
+                var result = Enum.GetNames(typeof(FamilyMemberType)).ToList();
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception occured {@ex}", ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
         /// Creates a new FamilyMember.
         /// </summary>
         /// <remarks>
@@ -71,8 +96,8 @@ namespace TchiboFamilyCircleApi.Controllers
         ///               "date": "2021-05-09"
         ///               }
         ///          ],
-        ///          "sizes": "40/42, M 40/42",
-        ///          "interests": "music, sport, jewerly, swimming, backing, traveling",
+        ///          "sizes": ["40/42", "M 40/42"],
+        ///          "interests": ["music", "sport", "jewerly", "swimming", "backing", "traveling"],
         ///          "customerNumber": "7584947365"
         ///          }
         ///
@@ -182,5 +207,7 @@ namespace TchiboFamilyCircleApi.Controllers
 
             return Ok();
         }
+
+
     }    
 }

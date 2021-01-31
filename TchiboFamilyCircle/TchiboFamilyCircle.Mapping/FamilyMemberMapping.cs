@@ -15,8 +15,8 @@ namespace TchiboFamilyCircle.Mapping
                 .ForMember(destination => destination.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(destination => destination.DateOfBirth, option => option.MapFrom(source => source.DateOfBirth))
                 .ForMember(destination => destination.Occasions, option => option.MapFrom(source => source.Occasions))
-                .ForMember(destination => destination.Sizes, option => option.MapFrom(source => string.Join(",", source.Sizes.ToArray())))
-                .ForMember(destination => destination.Interests, option => option.MapFrom(source => string.Join(",", source.Interests.ToArray())))
+                .ForMember(destination => destination.Sizes, option => option.MapFrom(source => source.Sizes))
+                .ForMember(destination => destination.Interests, option => option.MapFrom(source => source.Interests))
                 .ForMember(destination => destination.CustomerNumber, option => option.MapFrom(source => source.CustomerNumber));
 
             CreateMap<FamilyMember, FamilyMemberEntity>()
@@ -24,17 +24,9 @@ namespace TchiboFamilyCircle.Mapping
                 .ForMember(destination => destination.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(destination => destination.DateOfBirth, option => option.MapFrom(source => source.DateOfBirth))
                  .ForMember(destination => destination.Occasions, option => option.MapFrom(source => source.Occasions))
-                .ForMember(destination => destination.Sizes, option => option.MapFrom(source => MapStringToList(source.Sizes)))
-                .ForMember(destination => destination.Interests, option => option.MapFrom(source => MapStringToList(source.Interests)))
+                .ForMember(destination => destination.Sizes, option => option.MapFrom(source => source.Sizes))
+                .ForMember(destination => destination.Interests, option => option.MapFrom(source => source.Interests))
                 .ForMember(destination => destination.CustomerNumber, option => option.MapFrom(source => source.CustomerNumber));
-        }
-
-        private IEnumerable<string> MapStringToList(string input)
-        {
-            if (string.IsNullOrWhiteSpace(input))
-                return new List<string>();
-
-            return input.Split(',').ToList();
-        }
+        }        
     }
 }
