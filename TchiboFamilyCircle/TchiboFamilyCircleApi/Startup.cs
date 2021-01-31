@@ -79,6 +79,9 @@ namespace TchiboFamilyCircle
 
             builder.RegisterType<SizeService>()
              .As<ISizeService>();
+
+            builder.RegisterType<OccasionService>()
+            .As<IOccasionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

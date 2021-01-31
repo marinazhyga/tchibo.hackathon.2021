@@ -20,8 +20,16 @@ namespace TchiboFamilyCircleApi.Controllers
             _sizeService = sizeService;
         }
 
+        /// <summary>
+        /// Get a list of sizes for a family member.
+        /// </summary>
+        /// <param name="familyMembertype"></param>
+        /// <param name="birthDay"></param>
+        /// <returns>empty</returns>
+        /// <response code="200">Sizes have been received</response>
+        /// <response code="400">Exception occurred during getting sizes</response> 
         [HttpGet]
-        public ActionResult<IEnumerable<string>> GetSizesByMemberType(FamilyMemberType ? type = null, DateTime ? birthDay = null)
+        public ActionResult<IEnumerable<string>> GetSizesByMemberType(FamilyMemberType ? familyMembertype = null, DateTime ? birthDay = null)
         {
             _logger.LogInformation("GetSizesByMemberType requested");
 
@@ -29,9 +37,9 @@ namespace TchiboFamilyCircleApi.Controllers
 
             try
             {
-                if (type.HasValue)
+                if (familyMembertype.HasValue)
                 {
-                    result = _sizeService.GetSizesByFamilyMember(type.Value, birthDay);
+                    result = _sizeService.GetSizesByFamilyMember(familyMembertype.Value, birthDay);
                 }
                 else 
                 {

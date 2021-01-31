@@ -23,9 +23,8 @@ namespace TchiboFamilyCircleApi.Controllers
         /// <summary>
         /// Get a list of FamilyMembers.
         /// </summary>
-        /// <param name="familyMember"></param>
-        /// <returns>empty</returns>
-        /// <response code="200">FamilyMembers have been created received</response>
+        /// <returns>list of family members</returns>
+        /// <response code="200">FamilyMembers have been received</response>
         /// <response code="400">Exception occurred during getting FamilyMembers</response> 
         [HttpGet]
         public ActionResult<IEnumerable<FamilyMember>> GetFamilyMembers()
@@ -132,7 +131,7 @@ namespace TchiboFamilyCircleApi.Controllers
         /// <param name="familyMember"></param>
         /// <returns>empty</returns>
         /// <response code="200">FamilyMember has been created successfully</response>
-        /// <response code="400">Exception occurred during FamilyMember creation</response>  
+        /// <response code="400">Exception occurred during FamilyMember update</response>  
         [HttpPut]
         public IActionResult UpdateFamilyMember([FromBody] FamilyMember familyMember)
         {
