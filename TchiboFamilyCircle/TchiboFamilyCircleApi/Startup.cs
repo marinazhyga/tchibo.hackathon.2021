@@ -65,6 +65,7 @@ namespace TchiboFamilyCircle
                 options.ConnectionString = Configuration.GetSection("MongoDb:ConnectionString").Value;
                 options.Database = Configuration.GetSection("MongoDb:DatabaseName").Value;
                 options.CollectionName = Configuration.GetSection("MongoDb:CollectionName").Value;
+                options.TchiboApi = Configuration.GetSection("TchiboApi:Url").Value;
             });
 
             services.AddSingleton

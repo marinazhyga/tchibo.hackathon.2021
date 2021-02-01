@@ -5,5 +5,6 @@
         public string ConnectionString { get; set; }
         public string Database { get; set; }
         public string CollectionName { get; set; }
+        public string TchiboApi { get; set; }
     }
 }
