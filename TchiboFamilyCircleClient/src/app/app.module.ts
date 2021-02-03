@@ -8,20 +8,23 @@ import { AppComponent } from './app.component';
 import { HeaderComponent} from './header/header.component';
 import { FooterComponent} from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { MemberComponent } from './member/member.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    MemberComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' }     
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'member/:memberId/:occasionId', component: MemberComponent }
     ])
   ],
   providers: [],

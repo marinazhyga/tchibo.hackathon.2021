@@ -44,7 +44,7 @@ namespace TchiboFamilyCircle.DomainService
             request.AddHeader("Accept", "application/json");
 
             //check for availability
-            request.AddQueryParameter("filter[availability.default]", "");
+            //request.AddQueryParameter("filter[availability.default]", "true");
           
             //added check for delivery date in 2 days before occasion
             request.AddQueryParameter("filter[delivery.date][lte]", deliveryDateEnd);
@@ -53,12 +53,23 @@ namespace TchiboFamilyCircle.DomainService
             //add filter on sex: male female
             if (familyMember.Type.IsMale())
             {
-                request.AddQueryParameter("filter[gender]", "male");              
+                request.AddQueryParameter("filter[gender][eq]", "male");              
             }
             else if (familyMember.Type.IsFemale())
             {
-                request.AddQueryParameter("filter[gender]", "female");
-            }           
+                request.AddQueryParameter("filter[gender][eq]", "female");
+            }
+
+            //add search by size
+            if (familyMember.Sizes.Any())
+            {
+                request.AddQueryParameter("filter[has_size]", "true");
+               
+                //foreach (var size in familyMember.Sizes)
+                //{
+                //    request.AddQueryParameter("filter[size]", size);
+                //}
+            }
 
             try
             {
