@@ -65,7 +65,7 @@ namespace TchiboFamilyCircle
                 options.ConnectionString = Configuration.GetSection("MongoDb:ConnectionString").Value;
                 options.Database = Configuration.GetSection("MongoDb:DatabaseName").Value;
                 options.CollectionName = Configuration.GetSection("MongoDb:CollectionName").Value;
-                options.TchiboApi = Configuration.GetSection("TchiboApi:Url").Value;
+                options.TchiboApiUrl = Configuration.GetSection("TchiboApi:Url").Value;
             });
 
             services.AddSingleton
@@ -93,6 +93,9 @@ namespace TchiboFamilyCircle
 
             builder.RegisterType<OccasionService>()
             .As<IOccasionService>();
+
+            builder.RegisterType<FamilyCircleService>()
+           .As<IFamilyCircleService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

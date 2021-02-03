@@ -24,8 +24,8 @@ namespace TchiboFamilyCircle.Mapping
                 .ForMember(destination => destination.Name, option => option.MapFrom(source => source.Name))
                 .ForMember(destination => destination.DateOfBirth, option => option.MapFrom(source => source.DateOfBirth))
                  .ForMember(destination => destination.Occasions, option => option.MapFrom(source => source.Occasions))
-                .ForMember(destination => destination.Sizes, option => option.MapFrom(source => source.Sizes))
-                .ForMember(destination => destination.Interests, option => option.MapFrom(source => source.Interests))
+                .ForMember(destination => destination.Sizes, option => option.MapFrom(source => source.Sizes.Select(x => x.Trim())))
+                .ForMember(destination => destination.Interests, option => option.MapFrom(source => source.Interests.Select(x => x.Trim())))
                 .ForMember(destination => destination.CustomerNumber, option => option.MapFrom(source => source.CustomerNumber));
         }        
     }

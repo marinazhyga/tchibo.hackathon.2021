@@ -7,6 +7,8 @@ namespace TchiboFamilyCircle.DomainService
     {
         IEnumerable<FamilyMember> GetAll();
 
+        FamilyMember GetById(string id);
+
         void Add(FamilyMember familyMember);
 
         void Update(FamilyMember familyMember);

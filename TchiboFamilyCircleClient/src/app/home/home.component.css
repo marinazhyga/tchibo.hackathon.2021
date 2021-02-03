@@ -1,0 +1,17 @@
+span.occasion{
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+span.size{
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+span.interest{
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 25px;
+}

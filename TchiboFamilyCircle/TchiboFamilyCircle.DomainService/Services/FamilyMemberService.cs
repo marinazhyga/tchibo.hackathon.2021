@@ -39,6 +39,21 @@ namespace TchiboFamilyCircle.DomainService
 
             return familyMembers;
         }
+
+        public FamilyMember GetById(string id)
+        {
+            var familyMemeberEnity = _context.FamilyMemberEntities.Find(member => member.Id == id).FirstOrDefault();
+
+            var familyMember = new FamilyMember();
+
+            if (familyMemeberEnity != null)
+            {
+                familyMember = _mapper.Map<FamilyMemberEntity, FamilyMember>(familyMemeberEnity);
+            }
+
+            return familyMember;
+        }
+
         public void Update(FamilyMember familyMember)
         {
             var familyMemberEntity = _mapper.Map<FamilyMember, FamilyMemberEntity>(familyMember);

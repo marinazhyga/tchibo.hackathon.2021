@@ -55,6 +55,7 @@
                            <th>Occasions</th>
                            <th>Size</th>
                            <th>Interests</th>
+                           <th></th>
                         </tr>
                      </thead>
                      <tbody>
@@ -62,9 +63,9 @@
                            <td>{{ member.type }}</td>
                            <td>{{ member.name }}</td>
                            <td>{{ member.dateOfBirth.substring(0, 10) }}</td>
-                           <td> <span *ngFor="let occasion of member.occasions"> {{ occasion.name }} </span></td>
-                           <td> <span *ngFor="let size of member.sizes"> {{ size }} </span></td>
-                           <td> <span *ngFor="let interest of member.interests"> {{ interest }} </span></td>
+                           <td> <span class="occasion" *ngFor="let occasion of member.occasions"> {{ occasion.name }} </span></td>
+                           <td> <span class="size" *ngFor="let size of member.sizes"> {{ size }} </span></td>
+                           <td> <span class="interest" *ngFor="let interest of member.interests"> {{ interest }} </span></td>
                         </tr>
                      </tbody>
                   </table>
