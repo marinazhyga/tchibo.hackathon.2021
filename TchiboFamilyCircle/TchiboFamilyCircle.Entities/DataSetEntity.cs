@@ -63,13 +63,13 @@ namespace TchiboFamilyCircle.Entities
         public string mobile { get; set; }
     }
 
-    public class Article
+    public class ArticleEntity
     {
         public int tcm_article_number { get; set; }
         public int product_id { get; set; }
         public int webshop_product_id { get; set; }
         public int td_order_number { get; set; }
-        public object ean { get; set; }
+        public long ean { get; set; }
         public string type { get; set; }
         public string title { get; set; }
         public object size { get; set; }
@@ -112,7 +112,7 @@ namespace TchiboFamilyCircle.Entities
 
     public class DataSetEntity
     {
-        public List<Article> data { get; set; }
+        public List<ArticleEntity> data { get; set; }
         public Links links { get; set; }
         public Meta meta { get; set; }
     }

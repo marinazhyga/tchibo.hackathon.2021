@@ -4,7 +4,6 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TchiboFamilyCircle.Dto;
 using TchiboFamilyCircle.Entities;
 using TchiboFamilyCircle.Settings;
@@ -19,6 +18,7 @@ namespace TchiboFamilyCircle.DomainService
         public FamilyCircleService(IOptions<AppSettings> settings, IMapper mapper, IOccasionService occasionService)
         {
             _restClient = new RestClient(settings.Value.TchiboApiUrl);
+            _mapper = mapper;
             _occasionService = occasionService;
         }
         public IList<string> GetArticles(IList<FamilyMember> familyMembers)
@@ -40,7 +40,7 @@ namespace TchiboFamilyCircle.DomainService
            
             var deliveryDateEnd = occasion.Date.Subtract(new TimeSpan(2, 0, 0, 0)).ToString("yyyy-MM-dd").Replace("2021", "2020");             
 
-            var request = new RestRequest("api/v1/articles", Method.GET);           
+            var request = new RestRequest("api/v1/products", Method.GET);           
             request.AddHeader("Accept", "application/json");
 
             //check for availability
@@ -79,7 +79,7 @@ namespace TchiboFamilyCircle.DomainService
 
                 if (data != null)
                 {
-                    var articlesList = new List<Article>();
+                    var articlesList = new List<ArticleEntity>();
 
                     articlesList.AddRange(data.data);
 
@@ -105,9 +105,11 @@ namespace TchiboFamilyCircle.DomainService
 
                     //    data = queryResult.Data;
                     //}
-                    //while (currentPage<= data.meta.to);                                       
+                    //while (currentPage<= data.meta.to);
 
-                    return articlesList;
+                    var articles = _mapper.Map<IList<ArticleEntity>, IList<Article>>(articlesList);
+
+                    return articles;
                 }
             }
             catch (Exception ex)

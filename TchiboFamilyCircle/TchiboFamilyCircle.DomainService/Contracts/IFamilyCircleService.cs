@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using TchiboFamilyCircle.Dto;
-using TchiboFamilyCircle.Entities;
 
 namespace TchiboFamilyCircle.DomainService
 {

@@ -46,6 +46,30 @@ namespace TchiboFamilyCircleApi.Controllers
         }
 
         /// <summary>
+        /// Get a familyMember by id.
+        /// </summary>
+        /// <returns>a family members</returns>
+        /// <response code="200">FamilyMember have been received</response>
+        /// <response code="400">Exception occurred during getting FamilyMember</response> 
+        [HttpGet("{id}")]
+        public ActionResult<FamilyMember> GetFamilyMemberById(string id)
+        {
+            _logger.LogInformation("GetFamilyMemberById requested");
+
+            try
+            {
+                var result = _familyMemberService.GetById(id);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception occured {@ex}", ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
         /// Get a list of family member types.
         /// </summary>
         /// <returns>list of family member types</returns>

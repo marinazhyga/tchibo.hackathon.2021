@@ -73,6 +73,7 @@ namespace TchiboFamilyCircle
                     provider => new MapperConfiguration(config => 
                     {
                         config.AddProfile(new FamilyMemberMapping());
+                        config.AddProfile(new ArticleMapping());
                     }).CreateMapper()
                 );         
         }

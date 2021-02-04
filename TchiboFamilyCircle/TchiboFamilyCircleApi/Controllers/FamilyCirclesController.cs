@@ -24,7 +24,7 @@ namespace TchiboFamilyCircleApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Article>> GetArticlesPerFamilyMember(string familyMemberId = "60187e1dea2b94a848b786aa", int occasionId = 1)
+        public ActionResult<List<ArticleEntity>> GetArticlesPerFamilyMember([FromQuery] string familyMemberId = "60187e1dea2b94a848b786aa", [FromQuery] int occasionId = 1)
         {
             _logger.LogInformation("GetArticlesByFamilyMemberId requested");
 
@@ -42,7 +42,7 @@ namespace TchiboFamilyCircleApi.Controllers
                 return BadRequest(ex.Message);
             }
 
-            return new List<Article>();
+            return new List<ArticleEntity>();
         }
     }
 }
