@@ -1,5 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FamilyMember } from 'src/models/familyMember';
+import { Occasion } from 'src/models/occasion';
 
 @Component({
   selector: 'app-home',
@@ -22,22 +24,5 @@ export class HomeComponent {
       this.occasions = result;
     }, error => console.error(error));
   }
-}
-
-interface FamilyMember {
-  id: string;
-  name: string;
-  type: string;
-  dateOfBirth: string;
-  occasions: Occasion[];
-  sizes: string[];
-  interests: string[];
-  customerNumber: string;        
-}
-
-interface Occasion{
-  id: string;
-  name: string;
-  date: string;
 }
 

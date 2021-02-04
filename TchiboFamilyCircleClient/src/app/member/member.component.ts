@@ -1,5 +1,8 @@
 import { Component, Inject } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { FamilyMember } from "src/models/familyMember";
+import { Article } from "src/models/article";
+
 
 @Component({
   selector: "app-home",
@@ -11,7 +14,7 @@ export class MemberComponent {
   public articles: Article[];
   public headline = "Loading...";
   constructor(http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
-    http.get<FamilyMember>(baseUrl + "api/FamilyMembers/" + "60187f42ea2b94a848b786ab").subscribe((result) => {
+    http.get<FamilyMember>(baseUrl + "api/FamilyMembers/" + "60187e1dea2b94a848b786aa").subscribe((result) => {
           console.debug(result);
           this.familyMember = result;
           if (this.familyMember) {
@@ -20,7 +23,7 @@ export class MemberComponent {
         }, (error) => console.error(error)
       );
 
-    http.get<Article[]>(baseUrl + "api/FamilyCircles?familyMemberId=60187f42ea2b94a848b786ab&occasionId=1").subscribe((result) => {
+    http.get<Article[]>(baseUrl + "api/FamilyCircles?familyMemberId=60187e1dea2b94a848b786aa&occasionId=1").subscribe((result) => {
           console.debug(result);
           this.articles = result;
         },(error) => console.error(error)
@@ -28,32 +31,3 @@ export class MemberComponent {
   }
 }
 
-interface Article {
-  articleNumber: Int16Array;
-  productId: Int16Array;
-  ean: Int16Array;
-  title: string;
-  imageUrl: string;
-  pageUrl: string;
-  priceAmount: string;
-  priceOldAmount: string;
-  priceCurrency: string;
-  deliveryDate: string;
-}
-
-interface FamilyMember {
-  id: string;
-  name: string;
-  type: string;
-  dateOfBirth: string;
-  occasions: Occasion[];
-  sizes: string[];
-  interests: string[];
-  customerNumber: string;
-}
-
-interface Occasion {
-  id: string;
-  name: string;
-  date: string;
-}
