@@ -24,8 +24,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         cd TchiboFamilyCircleClient
-        npm install -g @angular/cli   
-        ng build --prod     
+        npm install -g @angular/cli && ng build --prod     
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
