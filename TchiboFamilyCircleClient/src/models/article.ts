@@ -6,7 +6,9 @@ export interface Article {
     imageUrl: string;
     pageUrl: string;
     priceAmount: string;
+    priceAmountFractal: string;
     priceOldAmount: string;
+    priceOldAmountFractal: string;
     priceCurrency: string;
     deliveryDate: string;
   }

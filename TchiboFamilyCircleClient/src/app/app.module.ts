@@ -24,7 +24,7 @@ import { MemberComponent } from './member/member.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'member/:memberId/:occasionId', component: MemberComponent }
+      { path: 'member/:id/:occasionId', component: MemberComponent }
     ])
   ],
   providers: [],

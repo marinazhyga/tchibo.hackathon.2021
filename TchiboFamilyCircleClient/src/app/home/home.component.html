@@ -63,7 +63,7 @@
                            <td>{{ member.type }}</td>
                            <td>{{ member.name }}</td>
                            <td>{{ member.dateOfBirth.substring(0, 10) }}</td>
-                           <td> <span class="occasion" *ngFor="let occasion of member.occasions"> {{ occasion.name }} </span></td>
+                           <td> <a class="occasion" *ngFor="let occasion of member.occasions" [routerLink]="['member', member.id, occasion.id]"> {{ occasion.name }} </a></td>
                            <td> <span class="size" *ngFor="let size of member.sizes"> {{ size }} </span></td>
                            <td> <span class="interest" *ngFor="let interest of member.interests"> {{ interest }} </span></td>
                         </tr>

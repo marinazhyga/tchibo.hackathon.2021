@@ -12,7 +12,7 @@ export class HomeComponent {
   public familyMembers: FamilyMember[];
   public occasions: Occasion[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(http: HttpClient, @Inject('FAMILY_CIRCLE_API_URL') baseUrl: string) {
     
     http.get<FamilyMember[]>(baseUrl + 'api/FamilyMembers').subscribe(result => {
       console.debug(result);

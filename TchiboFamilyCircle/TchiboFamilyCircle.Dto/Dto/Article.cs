@@ -37,7 +37,9 @@ namespace TchiboFamilyCircle.Dto
         //public Url url { get; set; }
 
         public string PriceAmount { get; set; }
+        public string PriceAmountFractal { get; set; }
         public string PriceOldAmount { get; set; }
+        public string PriceOldAmountFractal { get; set; }
         public string PriceCurrency { get; set; }
         public string DeliveryDate { get; set; }
     }
