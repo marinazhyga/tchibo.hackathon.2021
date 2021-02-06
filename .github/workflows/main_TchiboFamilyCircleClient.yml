@@ -24,9 +24,8 @@ jobs:
     - name: npm install, build, and test
       run: |
         cd TchiboFamilyCircleClient
-        npm install
-        npm run build --if-present
-        npm run test --if-present
+        ng serve --prod
+        
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
