@@ -43,9 +43,7 @@ namespace TchiboFamilyCircle
                         .AllowAnyMethod();
                 });
             });           
-
-            services.AddSwaggerGenNewtonsoftSupport();
-
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo 
@@ -59,6 +57,8 @@ namespace TchiboFamilyCircle
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+
+            services.AddSwaggerGenNewtonsoftSupport();
 
             services.Configure<AppSettings>(options =>
             {
@@ -106,13 +106,17 @@ namespace TchiboFamilyCircle
             app.UseCors("AnyOrigin");
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
+            app.UseSwagger(c =>
+            {
+                c.SerializeAsV2 = true;
+            });
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tchibo Family Circle Api v1");
+                c.RoutePrefix = string.Empty;
             });
 
             if (env.IsDevelopment())

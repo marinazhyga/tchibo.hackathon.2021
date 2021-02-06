@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using System.Security.Authentication;
 using TchiboFamilyCircle.Entities;
 using TchiboFamilyCircle.Settings;
 
@@ -14,7 +15,11 @@ namespace TchiboFamilyCircle.DataContext
         {
             _settings = settings;
 
-            var client = new MongoClient(_settings.Value.ConnectionString);
+            var mongoClientSettings = MongoClientSettings.FromUrl(new MongoUrl(_settings.Value.ConnectionString));
+
+            mongoClientSettings.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
+
+            var client = new MongoClient(mongoClientSettings);           
 
             if (client != null)
             {
