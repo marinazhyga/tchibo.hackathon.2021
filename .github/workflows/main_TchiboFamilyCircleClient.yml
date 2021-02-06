@@ -34,4 +34,4 @@ jobs:
         app-name: 'TchiboFamilyCircleClient'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_067c2503ba7044b58d3f0196eaf50416 }}
-        package: .
+        package: dist
