@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  FAMILY_CIRCLE_API_URL: "https://tchibofamilycircleapi.azurewebsites.net/"
 };

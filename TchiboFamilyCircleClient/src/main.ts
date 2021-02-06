@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 export function geApiUrl() {
-  return "http://localhost:5000/"; //document.getElementsByTagName('base')[0].href;
+  return environment.FAMILY_CIRCLE_API_URL;  
 }
 
 const providers = [

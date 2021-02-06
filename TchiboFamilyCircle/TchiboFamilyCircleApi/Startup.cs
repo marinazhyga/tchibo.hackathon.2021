@@ -49,7 +49,8 @@ namespace TchiboFamilyCircle
                 c.SwaggerDoc("v1", new OpenApiInfo 
                 { 
                     Title = "Tchibo Family Circle Api",
-                    Version = "v1"
+                    Version = "v1",
+                    Description = "This Api has been developed for TciboHackaton2021, contains a demo Api."
                 });
 
                 // Set the comments path for the Swagger JSON and UI.
