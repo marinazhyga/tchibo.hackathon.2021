@@ -6,8 +6,8 @@
         Wife,        
         Son,
         Dauther,
-        Father,
-        Mother,
+        Daddy,
+        Mommy,
         Brother,
         Sister,       
         CousinMale,
@@ -25,6 +25,6 @@
         Grandpa,
         Grandma,
         RelativeMale,
-        RelativeFemale      
+        RelativeFemale        
     }
 }

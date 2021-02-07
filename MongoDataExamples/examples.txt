@@ -1,0 +1,103 @@
+Husband
+  {
+    "name": "Tom",
+    "type": "Husband",
+    "dateOfBirth": "1988-11-15",
+    "occasions": [
+      {
+        "id": 6,
+        "name": "Anniversary",
+        "date": "2021-03-01"
+      },
+	  {
+        "id": 1,
+        "name": "Birthday",
+        "date": "2021-11-15"
+      }      
+    ],
+    "sizes": [      
+      "L 52/54",
+	  "43"
+    ],
+    "interests": [     
+      "bicycle",
+      "gym",
+      "traveling"     
+    ],
+    "customerNumber": "7584947365"
+  }
+  
+Mommy 
+  {
+    "name": "Ursula",
+    "type": "Mommy",
+    "dateOfBirth": "1961-02-15",
+    "occasions": [
+      {
+        "id": 1,
+        "name": "Birthday",
+        "date": "2021-02-15"
+      },
+      {
+        "id": 3,
+        "name": "Mother'sDay",
+        "date": "2021-05-08T22:00:00Z"
+      }
+    ],
+    "sizes": [
+      "M 40/42",
+	  "38"
+    ],
+    "interests": [     
+      "yoga",  	  
+      "jewerly",
+	  "backing"         
+    ],
+    "customerNumber": "7584947365"
+  }
+  
+Best friend's wedding 
+ {
+    "name": "Katarina",
+    "type": "FriendFemale",
+    "dateOfBirth": "1985-08-28",
+    "occasions": [
+      {
+        "id": 7,
+        "name": "Wedding",
+        "date": "2021-03-01"
+      }   
+    ],
+    "sizes": [
+		"S 36/38",
+		"37"
+	],
+    "interests": [     
+      "photos",
+      "coffee",
+      "fitnes"     
+    ],
+    "customerNumber": "7584947365"
+  }
+  
+ Brother is moving to an own house
+{
+    "name": "Dirk",
+    "type": "Brother",
+    "dateOfBirth": "1988-10-01",
+    "occasions": [
+      {
+        "id": 8,
+        "name": "Housewarming",
+        "date": "2021-04-15"
+      }   
+    ],
+    "sizes": [
+		"M 48/50"
+	],
+    "interests": [     
+      "cooking",
+      "garden"
+	  ],
+    "customerNumber": "7584947365"
+  }

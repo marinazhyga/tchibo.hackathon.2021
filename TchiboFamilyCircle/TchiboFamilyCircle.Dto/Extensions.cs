@@ -6,7 +6,7 @@
         {
             return (familyMemberType == FamilyMemberType.Wife ||
                familyMemberType == FamilyMemberType.Dauther ||
-               familyMemberType == FamilyMemberType.Mother ||
+               familyMemberType == FamilyMemberType.Mommy ||
                familyMemberType == FamilyMemberType.Sister ||
                familyMemberType == FamilyMemberType.CousinFemale ||
                familyMemberType == FamilyMemberType.MotherInLaw ||
@@ -22,7 +22,7 @@
         {
             return (familyMemberType == FamilyMemberType.Husband ||
                familyMemberType == FamilyMemberType.Son ||
-               familyMemberType == FamilyMemberType.Father ||
+               familyMemberType == FamilyMemberType.Daddy ||
                familyMemberType == FamilyMemberType.Brother ||
                familyMemberType == FamilyMemberType.CousinMale ||
                familyMemberType == FamilyMemberType.FatherInLaw ||
