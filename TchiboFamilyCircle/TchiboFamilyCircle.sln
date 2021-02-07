@@ -17,9 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TchiboFamilyCircle.Entities", "TchiboFamilyCircle.Entities\TchiboFamilyCircle.Entities.csproj", "{05F0ABC4-A91D-4538-A707-506B6B1E2113}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TchiboFamilyCircle.Settings", "TchiboFamilyCircle.Settings\TchiboFamilyCircle.Settings.csproj", "{EE6A5C93-D432-4614-A891-498756C6736C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TchiboFamilyCircle.Settings", "TchiboFamilyCircle.Settings\TchiboFamilyCircle.Settings.csproj", "{EE6A5C93-D432-4614-A891-498756C6736C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TchiboFamilyCircle.DataContext", "TchiboFamilyCircle.DataContext\TchiboFamilyCircle.DataContext.csproj", "{B5F20178-C6EA-49F3-B292-2D49EB0FC08C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TchiboFamilyCircle.DataContext", "TchiboFamilyCircle.DataContext\TchiboFamilyCircle.DataContext.csproj", "{B5F20178-C6EA-49F3-B292-2D49EB0FC08C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{248E09DA-8282-4C5D-A68E-C2CF051D9B63}"
 EndProject

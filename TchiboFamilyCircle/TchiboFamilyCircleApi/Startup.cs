@@ -117,7 +117,6 @@ namespace TchiboFamilyCircle
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tchibo Family Circle Api v1");
-                c.RoutePrefix = string.Empty;
             });
 
             if (env.IsDevelopment())
