@@ -19,6 +19,8 @@ namespace TchiboFamilyCircle.Dto
 
         public IEnumerable<string> Interests { get; set; }
 
-        public string CustomerNumber { get; set; }
+        public int ? Budget { get; set; }
+
+        public string CustomerNumber { get; set; }        
     }
 }

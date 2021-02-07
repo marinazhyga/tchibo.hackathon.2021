@@ -99,5 +99,6 @@ Best friend's wedding
       "cooking",
       "garden"
 	  ],
+	"budget": 150,
     "customerNumber": "7584947365"
   }

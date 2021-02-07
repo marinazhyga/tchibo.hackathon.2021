@@ -8,5 +8,6 @@ export interface FamilyMember {
     occasions: Occasion[];
     sizes: string[];
     interests: string[];
+    budget: number | null;
     customerNumber: string;        
   }

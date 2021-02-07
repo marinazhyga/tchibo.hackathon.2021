@@ -18,6 +18,7 @@ namespace TchiboFamilyCircle.Mapping
                 .ForMember(destination => destination.Occasions, option => option.MapFrom(source => source.Occasions))
                 .ForMember(destination => destination.Sizes, option => option.MapFrom(source => source.Sizes))
                 .ForMember(destination => destination.Interests, option => option.MapFrom(source => source.Interests))
+                .ForMember(destination => destination.Budget, option => option.MapFrom(source => source.Budget))
                 .ForMember(destination => destination.CustomerNumber, option => option.MapFrom(source => source.CustomerNumber));
 
             CreateMap<FamilyMember, FamilyMemberEntity>()
@@ -28,6 +29,7 @@ namespace TchiboFamilyCircle.Mapping
                 .ForMember(destination => destination.Occasions, option => option.MapFrom(source => source.Occasions))
                 .ForMember(destination => destination.Sizes, option => option.MapFrom(source => source.Sizes.Select(x => x.Trim())))
                 .ForMember(destination => destination.Interests, option => option.MapFrom(source => source.Interests.Select(x => x.Trim())))
+                .ForMember(destination => destination.Budget, option => option.MapFrom(source => source.Budget))
                 .ForMember(destination => destination.CustomerNumber, option => option.MapFrom(source => source.CustomerNumber));
         }        
     }

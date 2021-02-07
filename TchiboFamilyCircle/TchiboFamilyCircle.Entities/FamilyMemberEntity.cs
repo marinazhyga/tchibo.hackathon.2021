@@ -24,6 +24,9 @@ namespace TchiboFamilyCircle.Entities
 
         public IList<string> Interests { get; set; }
 
+        public int ? Budget { get; set; }
+
         public string CustomerNumber { get; set; }
+
     }
 }
