@@ -2,3 +2,16 @@
   min-height: 350px;
   margin: 20px 0px;
 }
+.articles-container {
+  display: flex;
+  position: relative;
+  /* gap: 2px; */
+  flex-wrap: wrap;
+}
+.articles-container > * {
+  min-width: 25%;
+}
+.product-image {
+  width: 242px;
+  height: 206px;
+}

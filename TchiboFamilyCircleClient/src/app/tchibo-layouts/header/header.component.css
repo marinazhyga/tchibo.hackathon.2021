@@ -28,7 +28,7 @@ header {
   width: 100%;
   align-items: center;
 }
-.hackaton-text{
+.hackaton-text {
   text-align: center;
   font-size: 20px;
 }
@@ -40,8 +40,9 @@ header {
   height: 100%;
   z-index: 1000;
   left: 0px;
+  cursor: pointer;
 }
 .shadow:hover {
-opacity: 0.9;
-background-color: #f6f6f6;
+  opacity: 0.9;
+  background-color: #f6f6f6;
 }
