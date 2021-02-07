@@ -765,3 +765,5 @@ TchiboFamilyCircle/TchiboFamilyCircle.DataContext/bin/Release/netcoreapp3.1/Tchi
 TchiboFamilyCircle/TchiboFamilyCircle.DataContext/bin/Release/netcoreapp3.1/TchiboFamilyCircle.DataContext.pdb
 TchiboFamilyCircle/TchiboFamilyCircle.DataContext/bin/Release/netcoreapp3.1/TchiboFamilyCircle.DataContext.dll
 TchiboFamilyCircle/TchiboFamilyCircle.DataContext/bin/Release/netcoreapp3.1/TchiboFamilyCircle.DataContext.deps.json
+TchiboFamilyCircleClient/.vscode/settings.json
+TchiboFamilyCircleClient/.deployment

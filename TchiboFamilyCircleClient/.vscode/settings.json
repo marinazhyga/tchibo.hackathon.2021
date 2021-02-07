@@ -1,0 +1,12 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "",
+    "appService.deploySubpath": ".",
+    "cSpell.words": [
+        "Bestellwert",
+        "rotateplane"
+    ]
+}

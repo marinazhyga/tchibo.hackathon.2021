@@ -1,29 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>TchiboFamilyCircleClient</title>
-    <base href="/" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/st/cssjs/4a58014fbae940be/30d114aa3cafc341b07e8ee07379a03e.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/st/cssjs/b99ec148c988f51f/cea2a5f87ec04526c39e762854df7aa9.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/globalCssJs/css/bf5ec39e098a251f.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/51a7230b15ec7856.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/bf51955bab5b951f.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/493190fe0b5a267e.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/bc3ad0fcdd9a251f.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/st/cssjs/beeb6148c988f51f/8cdf29ba39e6a53769055eec57e426c7.css"/>
-    <link rel="stylesheet" media="print" type="text/css" href="https://www.tchibo.de/newmedia/st/cssjs/4930239fbae940be/d2675f4006bb2d6bf870a8837b7d83ab.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/b369b63236d4c0bf.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/b820222cd6df87cf.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/b991955d6b5f810f.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/bb4802297b5a226f.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/beef739fbd9b926f.css"/>
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.tchibo.de/newmedia/page/css/bf5f739fbd9b926f.css"/>
-  </head>
-  <body>
-    <app-root>Loading...</app-root>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>TchiboFamilyCircleClient</title>
+  <base href="/" />
+  <style>
+    .spinner {
+      width: 40px;
+      height: 40px;
+      background-color: #b7b7b7;
+
+      margin: 100px auto;
+      -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+      animation: sk-rotateplane 1.2s infinite ease-in-out;
+    }
+
+    .full-size {
+
+    }
+
+    @-webkit-keyframes sk-rotateplane {
+      0% {
+        -webkit-transform: perspective(120px);
+      }
+
+      50% {
+        -webkit-transform: perspective(120px) rotateY(180deg);
+      }
+
+      100% {
+        -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+      }
+    }
+
+    @keyframes sk-rotateplane {
+      0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+      }
+
+      50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+      }
+
+      100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+      }
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/st/cssjs/4a58014fbae940be/30d114aa3cafc341b07e8ee07379a03e.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/st/cssjs/b99ec148c988f51f/cea2a5f87ec04526c39e762854df7aa9.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/globalCssJs/css/bf5ec39e098a251f.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/51a7230b15ec7856.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/bf51955bab5b951f.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/493190fe0b5a267e.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/bc3ad0fcdd9a251f.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/st/cssjs/beeb6148c988f51f/8cdf29ba39e6a53769055eec57e426c7.css" />
+  <link rel="stylesheet" media="print" type="text/css"
+    href="https://www.tchibo.de/newmedia/st/cssjs/4930239fbae940be/d2675f4006bb2d6bf870a8837b7d83ab.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/b369b63236d4c0bf.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/b820222cd6df87cf.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/b991955d6b5f810f.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/bb4802297b5a226f.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/beef739fbd9b926f.css" />
+  <link rel="stylesheet" media="all" type="text/css"
+    href="https://www.tchibo.de/newmedia/page/css/bf5f739fbd9b926f.css" />
+</head>
+
+<body>
+  <app-root>
+    <div class="spinner full-size">
+
+    </div>
+  </app-root>
+</body>
+
 </html>

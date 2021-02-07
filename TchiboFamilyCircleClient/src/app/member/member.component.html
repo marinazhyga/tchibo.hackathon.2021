@@ -1,54 +1,56 @@
 <main class="l-tp-container">
-   <section class="l-tp-container-content l-tp-container-content--full-responsive l-tp-container-content--tclayer">
-   </section>
    <section class="l-tp-container-content">
-   </section>
-   <section class="l-tp-container-content">
-      <div class="g-tp-row">
-         <div class="g-tp-column g-tp-column--first g-tp-column--full">
-            <div class="m-tp-base">
-               <div class="m-tp-base-row">
-                  <div class="m-tp-base-column m-tp-base-column--first m-tp-base-column--full">
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+
       <div id="id3d7" class="g-tp-row">
          <div class="g-tp-column g-tp-column--first g-tp-column--full">
             <div class="m-tp-base">
                <div class="m-tp-base-row">
                   <div class="m-tp-base-column m-tp-base-column--first m-tp-base-column--full">
-                     <h3 class="c-tp-headline">{{ headline }}</h3>                      
+                     <div *ngIf="loading">
+                        <h3 class="c-tp-headline">Loading...</h3>
+                     </div>
+                     <div class="c-tp-copytext" *ngIf="errorMessage && !familyMembers">{{errorMessage}}</div>
+                     <div *ngIf="!loading">
+                        <h3 class="c-tp-headline">{{ headline }}</h3>
+                        <div class="c-tp-copytext"><br> {{description}}
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
-      </div>      
-      <div class="g-tp-row">
+      </div>
+      <div class="spinner fadein" *ngIf="loading"></div>
+      <div class="g-tp-row fadein">
          <div class="g-tp-column g-tp-column--first g-tp-column--full">
             <div class="m-tp-base">
                <div class="m-tp-base-row">
-                  
-                  <div *ngFor="let article of articles" class="g-tp-flex-container" data-search-result-list-entry="" data-flex-container-width="25" data-product-id="article.productId" data-mood-processed="true">
-                     <div class="result" data-product-categories="[2305,1781,1994,2296]" data-mood-image-url="article.imageUrl">
+
+                  <div *ngFor="let article of articles" class="g-tp-flex-container" data-search-result-list-entry=""
+                     data-flex-container-width="25" data-product-id="article.productId" data-mood-processed="true">
+                     <div class="result" data-product-categories="[2305,1781,1994,2296]"
+                        data-mood-image-url="article.imageUrl">
                         <div class="huml_content_2000000000530310">
                            <div class="m-tp-productbox002 m-tp-productbox002--switch m-tp-productbox002-p400168103">
                               <div class="m-tp-productbox002-top">
                                  <div class="m-tp-productbox002-imagewrapper" data-search-to-pds="">
                                     <a [href]="article.pageUrl" [title]="article.title" data-pds-link="article.title">
-                                       <img class="m-tp-productbox002-image js-tp-imagelazy--loaded" [src]="article.imageUrl" [alt]="article.title" height="206" width="242" data-src="article.imageUrl" data-lazyload="true" data-img-for-source-product="article.imageUrl">
+                                       <img class="m-tp-productbox002-image js-tp-imagelazy--loaded"
+                                          [src]="article.imageUrl" [alt]="article.title" height="206" width="242"
+                                          data-src="article.imageUrl" data-lazyload="true"
+                                          data-img-for-source-product="article.imageUrl">
                                        <div class="m-tp-productbox002-imagetopleft">
-                                       </div>                                     
+                                       </div>
                                     </a>
                                  </div>
                                  <div class="m-tp-productbox002-availability-status h-tp-hidden">
-                                 </div>                                
+                                 </div>
                               </div>
                               <div class="m-tp-productbox002-bottom">
                                  <div class="m-tp-productbox002-available-sizes h-tp-hidden">
                                     <a class="m-tp-productbox002-available-sizes-toggle">
-                                    <span class="m-tp-productbox002-available-sizes-toggle-text">Verfügbare Größen</span>
+                                       <span class="m-tp-productbox002-available-sizes-toggle-text">Verfügbare
+                                          Größen</span>
                                     </a>
                                  </div>
                                  <div class="m-tp-productbox002-dimensions" data-search-to-pds=""></div>
@@ -56,15 +58,18 @@
                                     <div>
                                        <ul data-sibling-display-style="image">
                                           <li data-availability="available" data-sibling-product-id="article.productId">
-                                             <a [href]="article.pageUrl" data-pds-link="article.title"><img [src]="article.imageUrl" height="43" width="50" [alt]="article.title"></a>
+                                             <a [href]="article.pageUrl" data-pds-link="article.title"><img
+                                                   [src]="article.imageUrl" height="43" width="50"
+                                                   [alt]="article.title"></a>
                                           </li>
                                        </ul>
                                     </div>
                                  </div>
                                  <div class="m-tp-productbox002-info">
                                     <div class="m-tp-productbox002-title" data-search-to-pds="">
-                                       <a [href]="article.pageUrl" [title]="article.title" data-pds-link="article.title">
-                                       <span class="m-tp-productbox002-title-text">{{ article.title }}</span>
+                                       <a [href]="article.pageUrl" [title]="article.title"
+                                          data-pds-link="article.title">
+                                          <span class="m-tp-productbox002-title-text">{{ article.title }}</span>
                                        </a>
                                     </div>
                                     <div class="m-tp-productbox002-description">
@@ -78,7 +83,9 @@
                                              </div>
                                           </div>
                                        </div>
-                                       <a class="quickshopping" id="id38" [href]="article.pageUrl" data-pds-link="400168103" onclick="return Quickshopping.open('id38', 'Ihre\x20Auswahl', 'https://www.tchibo.de/quickshopping/open?productId=400168103&amp;subShop=FULL_RANGE&amp;position=eyJzdCI6IlVOS05PV04iLCJzbiI6IlVOS05PV04iLCJjbiI6IlVOS05PV04iLCJxcyI6Ik5PIiwi%0Ad3MiOiJOTyIsIm9zIjoiTk8iLCJzZiI6IlVOS05PV04iLCJkbCI6IlVOS05PV04ifQ%3D%3D', '');">Schnellansicht</a>
+                                       <a class="quickshopping" id="id38" [href]="article.pageUrl"
+                                          data-pds-link="400168103"
+                                          onclick="return Quickshopping.open('id38', 'Ihre\x20Auswahl', 'https://www.tchibo.de/quickshopping/open?productId=400168103&amp;subShop=FULL_RANGE&amp;position=eyJzdCI6IlVOS05PV04iLCJzbiI6IlVOS05PV04iLCJjbiI6IlVOS05PV04iLCJxcyI6Ik5PIiwi%0Ad3MiOiJOTyIsIm9zIjoiTk8iLCJzZiI6IlVOS05PV04iLCJkbCI6IlVOS05PV04ifQ%3D%3D', '');">Schnellansicht</a>
                                     </div>
                                     <div class="m-tp-productbox002-energylabel">
                                     </div>
@@ -103,13 +110,16 @@
                                     <div data-source-product-id="article.productId" class="">
                                        <div class="c-tp-price c-tp-price--120 c-tp-price--centered">
                                           <div class="c-tp-price-currentprice">
-                                            {{ article.priceAmount }}<sup>{{ article.priceAmountFractal }}</sup>
+                                             {{ article.priceAmount }}<sup>{{ article.priceAmountFractal }}</sup>
                                           </div>
                                        </div>
                                     </div>
                                  </div>
                                  <div data-product-info="quickshopping">
-                                    <a class="quickshopping" id="id39" [href]="article.pageUrl" data-pds-link="article.productId" onclick="return Quickshopping.open('id39', 'Ihre\x20Auswahl', 'https://www.tchibo.de/quickshopping/open?productId=400168103&amp;subShop=FULL_RANGE&amp;position=eyJzdCI6IlVOS05PV04iLCJzbiI6IlVOS05PV04iLCJjbiI6IlVOS05PV04iLCJxcyI6Ik5PIiwi%0Ad3MiOiJOTyIsIm9zIjoiTk8iLCJzZiI6IlVOS05PV04iLCJkbCI6IlVOS05PV04ifQ%3D%3D', '');" data-source-product-id="article.productId"></a>
+                                    <a class="quickshopping" id="id39" [href]="article.pageUrl"
+                                       data-pds-link="article.productId"
+                                       onclick="return Quickshopping.open('id39', 'Ihre\x20Auswahl', 'https://www.tchibo.de/quickshopping/open?productId=400168103&amp;subShop=FULL_RANGE&amp;position=eyJzdCI6IlVOS05PV04iLCJzbiI6IlVOS05PV04iLCJjbiI6IlVOS05PV04iLCJxcyI6Ik5PIiwi%0Ad3MiOiJOTyIsIm9zIjoiTk8iLCJzZiI6IlVOS05PV04iLCJkbCI6IlVOS05PV04ifQ%3D%3D', '');"
+                                       data-source-product-id="article.productId"></a>
                                  </div>
                                  <div data-product-info="dimensions">
                                  </div>
@@ -130,22 +140,6 @@
                </div>
             </div>
          </div>
-      </div>    
-      <div class="g-tp-row">
-         <div class="g-tp-column g-tp-column--first g-tp-column--full">
-            <div class="m-tp-base">
-               <div class="m-tp-base-row">
-                  <div class="m-tp-base-column m-tp-base-column--first m-tp-base-column--full">
-                     <div class="c-tp-separatorline002">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <section class="l-tp-container-content">
-      <div id="smagFootnote" class="footer footnotePanel">
       </div>
    </section>
 </main>

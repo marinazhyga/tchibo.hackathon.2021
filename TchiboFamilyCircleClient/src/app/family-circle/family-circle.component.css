@@ -1,0 +1,21 @@
+:host {
+  min-height: 350px;
+  margin: 20px 0px;
+}
+
+
+.tags {
+  display: flex;
+}
+.tag {
+  border: 1px solid #2259ab;
+  padding: 5px;
+  border-radius: 25px;
+  display: block;
+  margin: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.c-tp-copytext {
+  line-height: 1.9 !important;
+}

@@ -1,0 +1,77 @@
+<div class="g-tp-row">
+   <div class="g-tp-column g-tp-column--first g-tp-column--full">
+      <div class="m-tp-base">
+         <div class="m-tp-base-row">
+            <div class="m-tp-base-column m-tp-base-column--first m-tp-base-column--full">
+               <h1 class="c-tp-headline">Tchibo Family Circle</h1>
+               <div class="c-tp-copytext">
+                  <strong>Dear Mr./Mrs. Schmidt,</strong><br>We are proud to introduce our new feature called Family Circles.<br>
+                  We are here to help you to bring happiness for your beloved people.
+                  <br>
+                  <br>
+                  Please specify your family members special dates or occasions to allow us to make a perfect match
+                  and give a present suggestion. We will also inform you about the upcoming occasions.
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="spinner" *ngIf="loading"></div>
+<div class="c-tp-copytext" *ngIf="errorMessage && !familyMembers">{{errorMessage}}</div>
+<div *ngIf="!familyMembers && !loading" class="g-tp-row">
+   <div class="g-tp-column g-tp-column--first g-tp-column--full">
+      <div class="m-tp-base">
+         <div class="m-tp-base-row">
+            <div class="m-tp-base-column m-tp-base-column--first m-tp-base-column--full">
+               <div class="c-tp-copytext">
+                  <strong>You haven't defined your family circle yet.</strong>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="g-tp-row fadein" *ngIf="familyMembers">
+   <div class="g-tp-column g-tp-column--first g-tp-column--full">
+      <div class="m-tp-base">
+         <div class="m-tp-base-row">
+            <table class='table table-striped' aria-labelledby="tableLabel">
+               <thead>
+                  <tr>
+                     <th>Relation</th>
+                     <th>Name</th>
+                     <th>Date of birth</th>
+                     <th>Occasions</th>
+                     <th>Size</th>
+                     <th>Interests</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let member of familyMembers">
+                     <td>{{ member.type }}</td>
+                     <td>{{ member.name }}</td>
+                     <td>{{ member.dateOfBirth.substring(0, 10) }}</td>
+                     <td>
+                        <div class="tags">
+
+                           <a class="tag" *ngFor="let occasion of member.occasions"
+                              [routerLink]="['member', member.id, occasion.id]"> {{ occasion.name }} </a>
+                        </div>
+                     </td>
+                     <td>
+                        <div class="tags"><span class="tag" *ngFor="let size of member.sizes"> {{ size }} </span>
+                        </div>
+                     </td>
+                     <td>
+                        <div class="tags"> <span class="tag" *ngFor="let interest of member.interests"> {{ interest }}
+                           </span>
+                        </div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</div>
