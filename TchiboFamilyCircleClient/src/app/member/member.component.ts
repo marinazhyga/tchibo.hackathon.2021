@@ -44,7 +44,7 @@ export class MemberComponent implements OnInit {
           this.familyMember = result;
           this.loading = false;
           this.errorMessage = "";
-          if (this.familyMember) {
+          if (this.familyMember && this.occasion) {
             this.headline = `Presents for your ${this.familyMember.type.toLowerCase()} ${this.familyMember.name} on ${this.occasion.name.toLowerCase()}`;
           }
         },
@@ -86,6 +86,9 @@ export class MemberComponent implements OnInit {
         (result) => {
           this.occasion = result;
           this.errorMessage = "";
+          if (this.familyMember && this.occasion) {
+            this.headline = `Presents for your ${this.familyMember.type.toLowerCase()} ${this.familyMember.name} on ${this.occasion.name.toLowerCase()}`;
+          }
           console.debug(result);
         },
         (error) => {
