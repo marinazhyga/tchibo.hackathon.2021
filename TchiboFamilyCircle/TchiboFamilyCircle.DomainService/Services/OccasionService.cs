@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TchiboFamilyCircle.Dto;
 
 namespace TchiboFamilyCircle.DomainService
@@ -21,6 +22,11 @@ namespace TchiboFamilyCircle.DomainService
         public IList<Occasion> GetAllOccasions()
         {
             return _occasions;
+        }
+
+        public Occasion GetOccasionById(int id)
+        {
+            return _occasions.Where(x=>x.Id == id).FirstOrDefault();
         }
     }
 }

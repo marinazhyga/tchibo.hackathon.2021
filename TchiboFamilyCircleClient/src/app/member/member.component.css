@@ -15,3 +15,8 @@
   width: 242px;
   height: 206px;
 }
+
+.greeting
+{
+    font-size: 30px!important;
+}

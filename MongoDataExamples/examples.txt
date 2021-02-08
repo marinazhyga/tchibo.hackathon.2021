@@ -1,5 +1,6 @@
 Husband
   {
+    "id": "601fff1e5b7e4d16d9d14f5f",
     "name": "Tom",
     "type": "Husband",
     "dateOfBirth": "1988-11-15",
@@ -16,12 +17,11 @@ Husband
       }      
     ],
     "sizes": [      
-      "L 52/54",
+      "M 48/50",
 	  "43"
     ],
     "interests": [     
-      "bicycle",
-      "gym",
+      "ski",     
       "traveling"     
     ],
     "customerNumber": "7584947365"
@@ -29,6 +29,7 @@ Husband
   
 Mommy 
   {
+    "id": "601fff2a5b7e4d16d9d14f60",
     "name": "Ursula",
     "type": "Mommy",
     "dateOfBirth": "1961-02-15",
@@ -37,12 +38,7 @@ Mommy
         "id": 1,
         "name": "Birthday",
         "date": "2021-02-15"
-      },
-      {
-        "id": 3,
-        "name": "Mother'sDay",
-        "date": "2021-05-08T22:00:00Z"
-      }
+      }      
     ],
     "sizes": [
       "M 40/42",
@@ -56,15 +52,16 @@ Mommy
     "customerNumber": "7584947365"
   }
   
-Best friend's wedding 
+Sister garduation 
  {
+    "id": "601fff375b7e4d16d9d14f61", 
     "name": "Katarina",
-    "type": "FriendFemale",
+    "type": "Sister",
     "dateOfBirth": "1985-08-28",
     "occasions": [
       {
-        "id": 7,
-        "name": "Wedding",
+        "id": 9,
+        "name": "Graduation",
         "date": "2021-03-01"
       }   
     ],
@@ -72,15 +69,15 @@ Best friend's wedding
 		"S 36/38",
 		"37"
 	],
-    "interests": [     
-      "photos",
-      "coffee",
-      "fitnes"     
+    "interests": [    
+      "coffee" ,
+	  "photos"	  
+	  "photos"	  
     ],
     "customerNumber": "7584947365"
   }
   
- Brother is moving to an own house
++ Brother is moving to an own house
 {
     "name": "Dirk",
     "type": "Brother",

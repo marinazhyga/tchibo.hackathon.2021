@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { FamilyMember } from "src/models/familyMember";
 import { Article } from "src/models/article";
 import { ActivatedRoute } from "@angular/router";
+import { Occasion } from "src/models/occasion";
 
 @Component({
   selector: "app-home",
@@ -15,6 +16,7 @@ export class MemberComponent implements OnInit {
   headline = "";
   familyMemberId: string;
   occasionId: number;
+  occasion: Occasion;
   errorMessage = "";
   loading = false;
 
@@ -43,7 +45,7 @@ export class MemberComponent implements OnInit {
           this.loading = false;
           this.errorMessage = "";
           if (this.familyMember) {
-            this.headline = `Presents for ${this.familyMember.type} ${this.familyMember.name}`;
+            this.headline = `Presents for your ${this.familyMember.type.toLowerCase()} ${this.familyMember.name} on ${this.occasion.name.toLowerCase()}`;
           }
         },
         (error) => {
@@ -64,6 +66,25 @@ export class MemberComponent implements OnInit {
       .subscribe(
         (result) => {
           this.articles = result;
+          this.errorMessage = "";
+          console.debug(result);
+        },
+        (error) => {
+          this.errorMessage = "Server Unavailable";
+          this.loading = false;
+          console.error(error);
+        }
+      );
+
+      this.http
+      .get<Occasion>(
+        this.baseUrl +
+          "api/Occasions/" +         
+          this.occasionId
+      )
+      .subscribe(
+        (result) => {
+          this.occasion = result;
           this.errorMessage = "";
           console.debug(result);
         },

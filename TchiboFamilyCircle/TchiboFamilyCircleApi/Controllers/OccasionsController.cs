@@ -29,11 +29,35 @@ namespace TchiboFamilyCircleApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Occasion>> GetOccasions()
         {
-            _logger.LogInformation("GetOccasions requested");           
+            _logger.LogInformation("GetOccasions requested");
 
             try
             {
                 var result = _occasionService.GetAllOccasions();
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception occured {@ex}", ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Get an occasion by.
+        /// </summary>       
+        /// <returns>a occasion</returns>
+        /// <response code="200">Occasion has been received</response>
+        /// <response code="400">Exception occurred during getting occasion</response> 
+        [HttpGet("{id}")]
+        public ActionResult<Occasion> GetOccasionById(int id)
+        {
+            _logger.LogInformation("GetOccasions requested");
+
+            try
+            {
+                var result = _occasionService.GetOccasionById(id);
 
                 return Ok(result);
             }

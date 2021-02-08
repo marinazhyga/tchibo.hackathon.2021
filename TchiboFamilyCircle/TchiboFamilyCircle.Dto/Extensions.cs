@@ -33,5 +33,17 @@
                familyMemberType == FamilyMemberType.Grandpa ||
                familyMemberType == FamilyMemberType.RelativeMale);
         }
+
+        public static bool CanBeFlowers(this Occasion occasion)
+        {
+            if (occasion.Name == "Birthday" ||
+                occasion.Name == "Mother'sDay" ||
+                occasion.Name == "Anniversary" ||
+                occasion.Name == "Wedding" ||
+                occasion.Name == "Graduation")                
+                return true;
+
+            return false;
+        }
     }
 }

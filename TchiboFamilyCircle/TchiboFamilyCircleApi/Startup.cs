@@ -50,7 +50,7 @@ namespace TchiboFamilyCircle
                 { 
                     Title = "Tchibo Family Circle Api",
                     Version = "v1",
-                    Description = "This Api has been developed for TciboHackaton2021, contains a demo Api."
+                    Description = "This Api has been developed for TchiboHackaton2021, contains a demo Api."
                 });
 
                 // Set the comments path for the Swagger JSON and UI.

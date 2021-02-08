@@ -3,8 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using TchiboFamilyCircle.DomainService;
-using System.Linq;
-using TchiboFamilyCircle.Entities;
+using TchiboFamilyCircle.Dto;
 
 namespace TchiboFamilyCircleApi.Controllers
 {
@@ -24,7 +23,7 @@ namespace TchiboFamilyCircleApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<ArticleEntity>> GetArticlesPerFamilyMember([FromQuery] string familyMemberId = "60187e1dea2b94a848b786aa", [FromQuery] int occasionId = 1)
+        public ActionResult<List<Article>> GetArticlesPerFamilyMember([FromQuery] string familyMemberId = "601fff2a5b7e4d16d9d14f60", [FromQuery] int occasionId = 1)
         {
             _logger.LogInformation("GetArticlesByFamilyMemberId requested");
 
@@ -40,9 +39,7 @@ namespace TchiboFamilyCircleApi.Controllers
             {
                 _logger.LogError("Exception occured {@ex}", ex.Message);
                 return BadRequest(ex.Message);
-            }
-
-            return new List<ArticleEntity>();
+            }            
         }
     }
 }
