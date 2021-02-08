@@ -1,0 +1,38 @@
+version: '3'
+services:
+  tfc-mongo:
+    image: mongo
+    restart: always
+    command: ["--bind_ip_all"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - 27017:27017
+    networks:
+      - tfc-net  
+      
+  tfc-api:
+    build: 
+        context: ./TchiboFamilyCircle
+        dockerfile: Dockerfile
+    ports:
+      - 5000:80
+      
+    networks:
+      - tfc-net
+      
+  tfc-ui:
+    build: 
+        context: ./TchiboFamilyCircleClient
+        dockerfile: Dockerfile
+    ports:
+      - 4200:80
+    restart: always
+    networks:
+      - tfc-net
+
+networks:
+  tfc-net:
+    driver: bridge
+    

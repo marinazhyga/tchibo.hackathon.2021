@@ -6,10 +6,10 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["TchiboFamilyCircle/TchiboFamilyCircleApi.csproj", "TchiboFamilyCircle/"]
-RUN dotnet restore "TchiboFamilyCircle/TchiboFamilyCircleApi.csproj"
 COPY . .
-WORKDIR "/src/TchiboFamilyCircle"
+RUN dotnet restore "TchiboFamilyCircleApi/TchiboFamilyCircleApi.csproj"
+COPY . .
+WORKDIR "/src/TchiboFamilyCircleApi"
 RUN dotnet build "TchiboFamilyCircleApi.csproj" -c Release -o /app/build
 
 FROM build AS publish

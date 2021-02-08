@@ -17,7 +17,7 @@ namespace TchiboFamilyCircle.DataContext
 
             var mongoClientSettings = MongoClientSettings.FromUrl(new MongoUrl(_settings.Value.ConnectionString));
 
-            mongoClientSettings.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
+            // mongoClientSettings.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
 
             var client = new MongoClient(mongoClientSettings);           
 
