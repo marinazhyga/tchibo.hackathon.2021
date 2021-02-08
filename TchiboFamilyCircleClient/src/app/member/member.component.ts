@@ -29,6 +29,16 @@ export class MemberComponent implements OnInit {
   ngOnInit() {
     this.loadData();
   }
+  onDataLoaded() {
+    if (this.familyMember && this.occasion && this.articles) {
+      this.loading = false;
+      if (this.familyMember && this.occasion) {
+        this.headline = `Presents for your ${this.familyMember.type.toLowerCase()} ${
+          this.familyMember.name
+        } on ${this.occasion.name.toLowerCase()}`;
+      }
+    }
+  }
   loadData() {
     this.familyMemberId = this.route.snapshot.params.id;
     this.occasionId = this.route.snapshot.params.occasionId;
@@ -42,11 +52,8 @@ export class MemberComponent implements OnInit {
         (result) => {
           console.debug(result);
           this.familyMember = result;
-          this.loading = false;
           this.errorMessage = "";
-          if (this.familyMember && this.occasion) {
-            this.headline = `Presents for your ${this.familyMember.type.toLowerCase()} ${this.familyMember.name} on ${this.occasion.name.toLowerCase()}`;
-          }
+          this.onDataLoaded();
         },
         (error) => {
           this.errorMessage = "Server Unavailable";
@@ -67,6 +74,7 @@ export class MemberComponent implements OnInit {
         (result) => {
           this.articles = result;
           this.errorMessage = "";
+          this.onDataLoaded();
           console.debug(result);
         },
         (error) => {
@@ -76,19 +84,13 @@ export class MemberComponent implements OnInit {
         }
       );
 
-      this.http
-      .get<Occasion>(
-        this.baseUrl +
-          "api/Occasions/" +         
-          this.occasionId
-      )
+    this.http
+      .get<Occasion>(this.baseUrl + "api/Occasions/" + this.occasionId)
       .subscribe(
         (result) => {
           this.occasion = result;
           this.errorMessage = "";
-          if (this.familyMember && this.occasion) {
-            this.headline = `Presents for your ${this.familyMember.type.toLowerCase()} ${this.familyMember.name} on ${this.occasion.name.toLowerCase()}`;
-          }
+          this.onDataLoaded();
           console.debug(result);
         },
         (error) => {
