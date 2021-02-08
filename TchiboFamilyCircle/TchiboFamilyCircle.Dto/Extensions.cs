@@ -40,7 +40,7 @@
                 occasion.Name == "Mother'sDay" ||
                 occasion.Name == "Anniversary" ||
                 occasion.Name == "Wedding" ||
-                occasion.Name == "Graduation")                
+                occasion.Name == "Graduation")
                 return true;
 
             return false;

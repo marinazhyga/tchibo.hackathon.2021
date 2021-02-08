@@ -5,7 +5,7 @@ namespace TchiboFamilyCircle.Dto
 {
     public class FamilyMember
     {
-        public string Id { get; set; } 
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
@@ -19,8 +19,8 @@ namespace TchiboFamilyCircle.Dto
 
         public IEnumerable<string> Interests { get; set; }
 
-        public int ? Budget { get; set; }
+        public int? Budget { get; set; }
 
-        public string CustomerNumber { get; set; }        
+        public string CustomerNumber { get; set; }
     }
 }

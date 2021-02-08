@@ -31,6 +31,6 @@ namespace TchiboFamilyCircle.Mapping
                 .ForMember(destination => destination.Interests, option => option.MapFrom(source => source.Interests.Select(x => x.Trim())))
                 .ForMember(destination => destination.Budget, option => option.MapFrom(source => source.Budget))
                 .ForMember(destination => destination.CustomerNumber, option => option.MapFrom(source => source.CustomerNumber));
-        }        
+        }
     }
 }

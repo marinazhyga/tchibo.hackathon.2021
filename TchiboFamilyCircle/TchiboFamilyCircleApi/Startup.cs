@@ -42,12 +42,12 @@ namespace TchiboFamilyCircle
                         .AllowAnyOrigin()
                         .AllowAnyMethod();
                 });
-            });           
-            
+            });
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo 
-                { 
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
                     Title = "Tchibo Family Circle Api",
                     Version = "v1",
                     Description = "This Api has been developed for TchiboHackaton2021, contains a demo Api."
@@ -71,18 +71,18 @@ namespace TchiboFamilyCircle
 
             services.AddSingleton
                 (
-                    provider => new MapperConfiguration(config => 
+                    provider => new MapperConfiguration(config =>
                     {
                         config.AddProfile(new FamilyMemberMapping());
                         config.AddProfile(new ArticleMapping());
                     }).CreateMapper()
-                );         
+                );
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            Log.Logger = new LoggerConfiguration()                
-                .ReadFrom.Configuration(Configuration)              
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(Configuration)
                 .CreateLogger();
 
             builder.RegisterLogger();
@@ -138,6 +138,6 @@ namespace TchiboFamilyCircle
             });
 
             app.UseSerilogRequestLogging();
-        }        
+        }
     }
 }

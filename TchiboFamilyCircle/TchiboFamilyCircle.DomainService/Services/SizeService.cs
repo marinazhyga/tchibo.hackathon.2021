@@ -39,7 +39,7 @@ namespace TchiboFamilyCircle.DomainService
             { FamilyMemberType.Grandma, _sizesFemaleAdults },
             { FamilyMemberType.RelativeMale, _sizesMaleAdults },
             { FamilyMemberType.RelativeFemale, _sizesFemaleAdults }
-        };       
+        };
 
         public IList<string> GetAllSizes()
         {
@@ -50,10 +50,10 @@ namespace TchiboFamilyCircle.DomainService
                 result.AddRange(x.Value);
             }
 
-            return result.Distinct().ToList();           
+            return result.Distinct().ToList();
         }
 
-        public IList<string> GetSizesByFamilyMember(FamilyMemberType familyMemberType, DateTime ? birthDay)
+        public IList<string> GetSizesByFamilyMember(FamilyMemberType familyMemberType, DateTime? birthDay)
         {
             if (!birthDay.HasValue)
             {
@@ -80,6 +80,6 @@ namespace TchiboFamilyCircle.DomainService
             }
 
             return GetAllSizes();
-        }       
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace TchiboFamilyCircle.DomainService
 {
     public class OccasionService : IOccasionService
     {
-        private static IList<Occasion> _occasions = new List<Occasion> 
+        private static IList<Occasion> _occasions = new List<Occasion>
         {
             new Occasion { Id = 1, Name = "Birthday", Date = new DateTime() },
             new Occasion { Id = 2, Name = "Christmas", Date = new DateTime(2021, 12, 25)  },
@@ -26,7 +26,7 @@ namespace TchiboFamilyCircle.DomainService
 
         public Occasion GetOccasionById(int id)
         {
-            return _occasions.Where(x=>x.Id == id).FirstOrDefault();
+            return _occasions.Where(x => x.Id == id).FirstOrDefault();
         }
     }
 }

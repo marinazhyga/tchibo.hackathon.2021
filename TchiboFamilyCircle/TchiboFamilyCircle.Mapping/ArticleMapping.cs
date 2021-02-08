@@ -24,6 +24,6 @@ namespace TchiboFamilyCircle.Mapping
                 .ForMember(destination => destination.PriceCurrency, option => option.MapFrom(source => source.price.currency))
                 .ForMember(destination => destination.DeliveryDate, option => option.MapFrom(source => source.delivery.date.Replace("2020", "2021")));
 
-        }        
+        }
     }
 }

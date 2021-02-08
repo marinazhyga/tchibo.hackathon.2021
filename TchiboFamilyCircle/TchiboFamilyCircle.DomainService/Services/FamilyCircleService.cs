@@ -189,7 +189,7 @@ namespace TchiboFamilyCircle.DomainService
                 PriceOldAmount = "",
                 PriceOldAmountFractal = "",
                 PriceCurrency = "EUR"
-            } 
+            }
         };
 
         //4 artilces
@@ -250,7 +250,7 @@ namespace TchiboFamilyCircle.DomainService
         };
 
         //4 articles 
-        private readonly IList<Article> _articlesBacking = new List<Article> 
+        private readonly IList<Article> _articlesBacking = new List<Article>
         {
               new Article {
                 ArticleNumber = 400160684,
@@ -303,11 +303,11 @@ namespace TchiboFamilyCircle.DomainService
                 PriceOldAmount = "",
                 PriceOldAmountFractal = "",
                 PriceCurrency = "EUR"
-            } 
+            }
         };
 
         //4 articles
-        private readonly IList<Article> _articlesFemaleYoga = new List<Article> 
+        private readonly IList<Article> _articlesFemaleYoga = new List<Article>
         {
              new Article {
                 ArticleNumber = 402003160,
@@ -360,11 +360,11 @@ namespace TchiboFamilyCircle.DomainService
                 PriceOldAmount = "",
                 PriceOldAmountFractal = "",
                 PriceCurrency = "EUR"
-            } 
+            }
         };
 
         //2 articles
-        private readonly IList<Article> _articlesCoffeeMaschines = new List<Article> 
+        private readonly IList<Article> _articlesCoffeeMaschines = new List<Article>
         {
               new Article {
                 ArticleNumber = 402006504,
@@ -444,7 +444,7 @@ namespace TchiboFamilyCircle.DomainService
             _restClient = new RestClient(settings.Value.TchiboApiUrl);
             _mapper = mapper;
             _occasionService = occasionService;
-        }       
+        }
 
         public IList<Article> GetArticlesPerFamilyMember(FamilyMember familyMember, int occasionId)
         {
@@ -564,7 +564,7 @@ namespace TchiboFamilyCircle.DomainService
                     article.DeliveryDate = deliveryDateEnd;
                 }
                 articles.AddRange(_articlesHausWarming);
-            }           
+            }
 
             if (occasion.Name == "Graduation")
             {
@@ -578,7 +578,7 @@ namespace TchiboFamilyCircle.DomainService
                 request = new RestRequest("api/v1/products", Method.GET);
                 request.AddHeader("Accept", "application/json");
                 request.AddQueryParameter("type", "coffee");
-                          
+
                 var articlesCoffee = GetArticlesBySearchCriteria(request);
 
                 if (articlesCoffee != null && articlesCoffee.Any())

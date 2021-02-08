@@ -5,11 +5,11 @@ namespace TchiboFamilyCircle.Dto
     public class Article
     {
         public int ArticleNumber { get; set; }
-        public int ProductId { get; set; }       
-        public long Ean { get; set; }       
+        public int ProductId { get; set; }
+        public long Ean { get; set; }
         public string Title { get; set; }
         public string ImageUrl { get; set; }
-        public string PageUrl { get; set; }        
+        public string PageUrl { get; set; }
         public string PriceAmount { get; set; }
         public string PriceAmountFractal { get; set; }
         public string PriceOldAmount { get; set; }

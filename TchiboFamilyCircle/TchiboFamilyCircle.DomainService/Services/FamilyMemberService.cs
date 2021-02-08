@@ -30,7 +30,7 @@ namespace TchiboFamilyCircle.DomainService
         public void Delete(string id)
         {
             _context.FamilyMemberEntities.DeleteOne(member => member.Id == id);
-        }        
+        }
         public IEnumerable<FamilyMember> GetAll()
         {
             var familyMemeberEnities = _context.FamilyMemberEntities.Find(member => true).ToList();
@@ -58,7 +58,7 @@ namespace TchiboFamilyCircle.DomainService
         {
             var familyMemberEntity = _mapper.Map<FamilyMember, FamilyMemberEntity>(familyMember);
 
-            _context.FamilyMemberEntities.ReplaceOne(member => member.Id == familyMemberEntity.Id, familyMemberEntity);           
+            _context.FamilyMemberEntities.ReplaceOne(member => member.Id == familyMemberEntity.Id, familyMemberEntity);
         }
     }
 }
